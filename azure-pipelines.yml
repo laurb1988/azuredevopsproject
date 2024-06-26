@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: azuredevopsjobagent
+  name: Default
 
 steps:
 - task: Maven@3
