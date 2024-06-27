@@ -11,11 +11,12 @@ pool:
   name: Default
 
 steps:
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+- script: |
+    echo "Setting JAVA_HOME"
+    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+    export PATH=$JAVA_HOME/bin:$PATH
+    java -version
+  displayName: 'Set JAVA_HOME and check Java version'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
