@@ -11,12 +11,6 @@ pool:
   name: Default
 
 steps:
-- script: |
-    echo "Setting JAVA_HOME"
-    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-    export PATH=$JAVA_HOME/bin:$PATH
-    java -version
-  displayName: 'Set JAVA_HOME and check Java version'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
